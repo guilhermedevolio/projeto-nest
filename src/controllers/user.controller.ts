@@ -8,20 +8,13 @@ export class UserController {
 
   @Get('/list')
   @HttpCode(HttpStatus.OK)
-  listTask() {
+  listUsers() {
     return this.userService.findAll();
-  }
-
-  @Get('/:id')
-  @HttpCode(HttpStatus.OK)
-  getHello(@Param() params: any): string {
-    const { id } = params;
-    return this.userService.getHello();
   }
 
   @Post('/create')
   @HttpCode(HttpStatus.CREATED)
-  createTask(@Body() body: TaskDto) {
+  createUser(@Body() body: TaskDto) {
     return this.userService.create(body);
   }
 }

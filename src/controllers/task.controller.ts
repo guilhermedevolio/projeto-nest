@@ -8,15 +8,8 @@ export class TaskController {
 
   @Get('/list')
   @HttpCode(HttpStatus.OK)
-  listTask() {
+  listTasks() {
     return this.taskService.findAll();
-  }
-
-  @Get('/:id')
-  @HttpCode(HttpStatus.OK)
-  getHello(@Param() params: any): string {
-    const { id } = params;
-    return this.taskService.getHello();
   }
 
   @Post('/create')
